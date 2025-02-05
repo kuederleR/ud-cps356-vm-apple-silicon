@@ -3,11 +3,19 @@ A compilation of files distilled for apple M-series macs to run the University o
 ### Downloading the OVM Files
 To download pre-converted files, run the command:
 ```bash
-gti clone https://github.com/kuederleR/ud-cps356-vm-apple-silicon.git 
+git clone https://github.com/kuederleR/ud-cps356-vm-apple-silicon.git 
 ```
 
 ### Launch the VM
+Navigate to the VM directory:
+```bash
+cd ud-cps356-vm-apple-silicon
+```
 
+Launch the VM: You will use this command to launch the VM in the future.
+```bash
+qemu-system-x86_64 -m 4G -smp 4 -drive file=CPS-356-disk.qcow2,format=qcow2 -boot c -cpu qemu64 -accel tcg,thread=multi -vga virtio
+```
 
 ## Converting to OVM for ARM64
 1. **Launch Original VM**:
